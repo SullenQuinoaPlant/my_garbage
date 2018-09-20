@@ -1,8 +1,7 @@
-NAME = myrbtree
+NAME = mygarbage
 LIBNAME = lib$(NAME)
-GIT_REPO = https://github.com/SullenQuinoaPlant/.git
+GIT_REPO = https://github.com/SullenQuinoaPlant/my_garbage.git
 
-CALL_DIR := $(shell pwd)
 SRC_DIR := $(ROOT)/sources
 INC_DIR := $(ROOT)/includes
 OBJ_DIR := $(ROOT)/objects
@@ -20,7 +19,7 @@ SRCS = $(patsubst %,$(SRC_DIR)/%.c,$(TARGETS))
 OBJS = $(patsubst %,$(OBJ_DIR)/%.o,$(TARGETS))
 INCS = $(INC_DIR)/*.h
 
-DEPENDENCIES = libft
+DEPENDENCIES = libmyrbtree libft
 
 CC := gcc
 CFLAGS_MORE =
