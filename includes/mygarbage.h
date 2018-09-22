@@ -27,7 +27,7 @@ int				gbg_register_alloc(
 	size_t	alloc_sz,
 	int		initial_refcount);
 
-void			gbg_revoke_ownership(
+void			gbg_unregister_address(
 	void	*for_address,
 	size_t	*ret_alloc_sz,
 	int		*ret_refcount);
