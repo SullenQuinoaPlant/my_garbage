@@ -12,11 +12,12 @@
 ** - don't use if (uintptr_t) isn't available.
 */
 
+/*
+**functions:
+*/
 int				gbg_init(void);
 
-int				gbg_delete(void);
-
-int				gbg_free_all(void);
+void			gbg_delete(void);
 
 int				gbg_mod_refcount(
 	void	*for_address,
@@ -32,9 +33,16 @@ void			gbg_unregister_address(
 	size_t	*ret_alloc_sz,
 	int		*ret_refcount);
 
+/*
+**return codes
+*/
 # define GBG_SYS_ERR -1
 # define GBG_SUCCESS 0
-# define GBG_NOT_REGISTERED 1
-# define GBG_NO_DOUBLE_INIT 2
+/*
+**GBG_NOT_REG as in not_registered
+*/
+# define GBG_NOT_REG 1
+# define GBG_DOUBLE_INIT 2
+# define GBG_REFCT_TOO_BIG
 
 #endif
