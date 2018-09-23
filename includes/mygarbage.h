@@ -1,6 +1,19 @@
+/*
+
+
+mygarbage.h
+
+
+
+
+
+
+*/
+
 #ifndef MYGARBAGE_H
 # define MYGARBAGE_H
 
+# include <stddef.h>
 # include <stdint.h>
 /*
 **NOTE : casts (void*)s to (uintptr_t)s for ordering.

@@ -29,10 +29,10 @@ libft :
 	$(BUILD_LIB)
 
 
-libmyfloatingpoint :
+libmyrbtree:
 	git clone \
 		--single-branch \
-		-b release https://github.com/SullenQuinoaPlant/my_floatingpoint.git \
+		-b release https://github.com/SullenQuinoaPlant/my_rbtree.git \
 		--depth 1 \
 		$(LIB_DIR)/$@/
 	$(BUILD_LIB)
