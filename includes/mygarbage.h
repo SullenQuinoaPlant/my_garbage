@@ -33,9 +33,10 @@ int				gbg_register_alloc(
 	void	*p_registry);
 
 void			gbg_unregister_address(
-	void	*for_address,
+	void	*address,
 	size_t	*ret_alloc_sz,
-	int		*ret_refcount);
+	int		*ret_refcount,
+	void	*p_registry);
 
 /*
 **return codes
@@ -47,6 +48,7 @@ void			gbg_unregister_address(
 */
 # define GBG_NOT_REG 1
 # define GBG_DOUBLE_INIT 2
-# define GBG_REFCT_TOO_BIG
+# define GBG_REFCT_TOO_BIG 3
+# define GBG_NO_ADDR 4
 
 #endif
