@@ -11,7 +11,7 @@ LIBS_I := $(LIB_DIR)/includes
 OUT_DIR_LIB := $(LIBS_L)
 OUT_DIR_H := $(LIBS_I)
 TEST_DIR := $(ROOT)/tests
-AUX_DIR := $(TEST_DIR)/auxilliaries
+#AUX_DIR := $(TEST_DIR)/auxilliaries
 RELEASE_DIR := $(ROOT)/release_$(NAME)
 
 include $(ROOT)/targets.mk
