@@ -21,6 +21,14 @@ int				gbg_init(
 void			gbg_delete(
 	void	**p_registry);
 
+/*
+**can fail if (size_t) may be too small to store size of
+**several memory allocations.
+*/
+int				gbg_mem_use(
+	void	*p_registry,
+	size_t	*ret_sz_sum);
+
 int				gbg_mod_refcount(
 	void	*for_address,
 	int		ref_count_change,
@@ -32,7 +40,10 @@ int				gbg_register_alloc(
 	int		initial_refcount,
 	void	*p_registry);
 
-void			gbg_unregister_address(
+/*
+**unregister address:
+*/
+void			gbg_unreg(
 	void	*address,
 	size_t	*ret_alloc_sz,
 	int		*ret_refcount,

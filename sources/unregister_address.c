@@ -1,6 +1,6 @@
 #include "inner.h"
 
-int						gbg_unregister_address(
+int						gbg_unreg(
 	void *addr,
 	size_t *ret_sz,
 	int *ret_refct,
