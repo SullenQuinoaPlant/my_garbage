@@ -2,6 +2,7 @@
 # define INNER_H
 
 # include "libft.h"
+# include "libmyrbtree.h"
 # include "mygarbage.h"
 
 typedef struct	s_gbg_entry
