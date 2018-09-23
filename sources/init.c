@@ -1,9 +1,12 @@
 #include "inner.h"
 
 static t_e_comp		natural_order(
-	void *addr1,
-	void *addr2)
+	void *p_addr1,
+	void *p_addr2)
 {
+	void *const	addr1 = *(void**)p_addr1;
+	void *const	addr2 = *(void**)p_addr2;
+
 	if (addr1 != addr2)
 		return ((uintptr_t)addr1 < (uintptr_t)addr2 ? e_lt : e_gt);
 	return (e_eq);

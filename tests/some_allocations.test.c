@@ -15,6 +15,7 @@ int	declare_tests_and_run(int all_of, char *these[])
 		size_t	gbg_total;
 
 
+		reg = 0;
 		if ((gbg_init(&reg)) != GBG_SUCCESS)
 			skip();
 		total = 0;
@@ -35,6 +36,7 @@ int	declare_tests_and_run(int all_of, char *these[])
 		size_t	gbg_total;
 
 
+		reg = 0;
 		if ((gbg_init(&reg)) != GBG_SUCCESS)
 			skip();
 		for (i = 0; i < ALLOC_COUNT; i++)
@@ -63,6 +65,7 @@ int	declare_tests_and_run(int all_of, char *these[])
 		int		ref_count;
 
 
+		reg = 0;
 		if ((gbg_init(&reg)) != GBG_SUCCESS)
 			skip();
 		for (i = 0; i < ALLOC_COUNT; i++)

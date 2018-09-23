@@ -37,12 +37,11 @@ libmyrbtree:
 		$(LIB_DIR)/$@/
 	$(BUILD_LIB)
 
-
 .PHONY : clean-lib*
 clean-lib% :
 	-rm -rf $(LIB_DIR)/lib$*
 	-rm $(LIBS_I)/lib$*.h
 	-rm $(LIBS_L)/lib$*.a
 
-.PHONY : re_lib*
 re_lib% : clean-lib% lib%
+	@:
