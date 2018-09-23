@@ -45,4 +45,4 @@ clean-lib% :
 	-rm $(LIBS_L)/lib$*.a
 
 .PHONY : re_lib*
-re_libr% : clean-lib% lib%
+re_lib% : clean-lib% lib%

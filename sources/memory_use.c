@@ -1,14 +1,15 @@
 #include "inner.h"
 
 int						summer(
-	void 		*p_retsum,
-	void 		*p_key,
-	void *const	*p_entry)
+	void 	*p_retsum,
+	void 	*p_key,
+	void	**p_entry)
 {
 	size_t *const		ret_sum = (size_t*)p_retsum;
 	t_s_entry *const	entry = (t_s_entry*)*p_entry;
 
-	ret_sum += entry->sz;
+	(void)p_key;
+	*ret_sum += entry->sz;
 	return (RBT_SUCCESS);
 }
 

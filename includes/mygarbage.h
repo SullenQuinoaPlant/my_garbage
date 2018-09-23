@@ -56,7 +56,7 @@ int				gbg_register_alloc(
 /*
 **unregister address:
 */
-void			gbg_unreg(
+int				gbg_unreg(
 	void	*address,
 	size_t	*ret_alloc_sz,
 	int		*ret_refcount,

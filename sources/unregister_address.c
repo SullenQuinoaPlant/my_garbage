@@ -9,7 +9,7 @@ int						gbg_unreg(
 	t_s_entry	*entry;
 	int			r;
 
-	r = rbtn_remove_retrieve(&addr, p_reg, &entry);
+	r = rbtn_remove_retrieve(&addr, p_reg, (void**)&entry);
 	if (r == RBT_KEY_NOT_FOUND)
 		return (GBG_NOT_REG);
 	else if (r != RBT_SUCCESS)

@@ -10,7 +10,7 @@ EXECUTION_STAMPS := $(TEST_OBJS:.o=.execution.stamp)
 CFLAGS_TEST = -fno-builtin -g
 CFLAGS_TEST += $(CFLAGS_MORE)
 
-TEST_DEPENDENCIES = libaux libcmocka_shared
+TEST_DEPENDENCIES = libcmocka_shared
 
 
 .PHONY : tests_all
