@@ -3,22 +3,22 @@
 
 int						gbg_mod_refcount(
 	void *addr,
-	int inc)
+	int inc,
+	void *p_registry)
 {
-	t_s_entry	*ref;
+	t_s_entry	*entry;
 	int			r;
 
-	r = rbtn_retrieve(&addr, &g_gbg_registry, &ref);
+	r = rbtn_retrieve(&addr, p_registry, &entry);
 	if (r == RBT_KEY_NOT_FOUND)
 		return (GBG_NOT_REG);
 	else if (r =! RBT_SUCCESS)
 		return (GBG_SYS_ERR);
-	else if (inc > 0 && INT_MAX - inc < ref->refct)
+	else if (inc > 0 && INT_MAX - inc < entry->refct)
 		return (GBG_REFCT_TOO_BIG);
-	else if ((r = (ref->refct += inc)) > 0)
+	else if ((r = (entry->refct += inc)) > 0)
 		return (GBG_SUCCESS);
-	rbtn_remove(&addr, g_gbg_registry);
-	ft_cleanfree(addr, ref->sz);
-	ft_cleanfree(ref, sizeof(t_s_entry);
+	rbtn_remove(&addr, p_registry);
+	free_entry(addr, &entry);
 	return (r < 0 ? GBG_NEG_REFCT : GBG_SUCCESS);
 }

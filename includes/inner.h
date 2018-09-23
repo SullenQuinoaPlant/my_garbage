@@ -9,6 +9,8 @@ typedef struct	s_gbg_entry
 	int		refct;
 }				t_s_entry;
 
-extern void		*g_gbg_registry;
+int				free_entry(
+	void	*addr,
+	void	**p_entry);
 
 #endif

@@ -15,18 +15,22 @@
 /*
 **functions:
 */
-int				gbg_init(void);
+int				gbg_init(
+	void	**p_registry);
 
-void			gbg_delete(void);
+void			gbg_delete(
+	void	**p_registry);
 
 int				gbg_mod_refcount(
 	void	*for_address,
-	int		ref_count_change);
+	int		ref_count_change,
+	void	*p_registry);
 
 int				gbg_register_alloc(
 	void	*address,
 	size_t	alloc_sz,
-	int		initial_refcount);
+	int		initial_refcount,
+	void	*p_registry);
 
 void			gbg_unregister_address(
 	void	*for_address,
