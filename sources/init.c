@@ -5,7 +5,7 @@ static t_e_comp		natural_order(
 	void *addr2)
 {
 	if (addr1 != addr2)
-		return ((uintptr_t)addr1 < (uintptr_t)addr2 ? e_lt : e_gt)
+		return ((uintptr_t)addr1 < (uintptr_t)addr2 ? e_lt : e_gt);
 	return (e_eq);
 }
 

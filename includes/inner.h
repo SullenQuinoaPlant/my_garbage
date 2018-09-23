@@ -1,7 +1,9 @@
 #ifndef INNER_H
 # define INNER_H
 
-# include mygarbage.h
+# include "libft.h"
+# include "libmyrbtree.h"
+# include "mygarbage.h"
 
 typedef struct	s_gbg_entry
 {

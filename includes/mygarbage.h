@@ -1,6 +1,19 @@
+/*
+
+
+mygarbage.h
+
+
+
+
+
+
+*/
+
 #ifndef MYGARBAGE_H
 # define MYGARBAGE_H
 
+# include <stddef.h>
 # include <stdint.h>
 /*
 **NOTE : casts (void*)s to (uintptr_t)s for ordering.
@@ -60,6 +73,7 @@ void			gbg_unreg(
 # define GBG_NOT_REG 1
 # define GBG_DOUBLE_INIT 2
 # define GBG_REFCT_TOO_BIG 3
-# define GBG_NO_ADDR 4
+# define GBG_NEG_REFCT 4
+# define GBG_NO_ADDR 5
 
 #endif
