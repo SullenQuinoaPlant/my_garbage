@@ -7,7 +7,7 @@
 int	declare_tests_and_run(int all_of, char *these[])
 {
 	#define ALLOC_COUNT 10
-	T(10allocations,
+	T(ten_allocations,
 		int		i;
 		void	*p;
 		void	*reg;
@@ -27,7 +27,7 @@ int	declare_tests_and_run(int all_of, char *these[])
 		gbg_delete(&reg);
 	)
 
-	T(10allocations_and_deallocs,
+	T(ten_allocations_and_deallocs,
 		int		i;
 		void	*allocs[ALLOC_COUNT];
 		void	*p;
@@ -53,7 +53,7 @@ int	declare_tests_and_run(int all_of, char *these[])
 		gbg_delete(&reg);
 	)
 
-	T(10allocations_unregistered,
+	T(ten_allocations_unregistered,
 		int		i;
 		void	*allocs[ALLOC_COUNT];
 		void	*p;
