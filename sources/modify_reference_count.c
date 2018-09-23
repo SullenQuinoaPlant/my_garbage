@@ -19,6 +19,6 @@ int						gbg_mod_refcount(
 	else if ((r = (entry->refct += inc)) > 0)
 		return (GBG_SUCCESS);
 	rbtn_remove(&addr, p_registry);
-	free_entry(addr, (void**)&entry);
+	free_entry((void*) 0, addr, (void**)&entry);
 	return (r < 0 ? GBG_NEG_REFCT : GBG_SUCCESS);
 }

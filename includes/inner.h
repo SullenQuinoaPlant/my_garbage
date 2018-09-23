@@ -12,6 +12,7 @@ typedef struct	s_gbg_entry
 }				t_s_entry;
 
 int				free_entry(
+	void	*unused_arg,
 	void	*addr,
 	void	**p_entry);
 
