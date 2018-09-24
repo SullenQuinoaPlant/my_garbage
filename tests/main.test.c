@@ -16,12 +16,15 @@ int		main ()
 	reg = 0;
 	if ((gbg_init(&reg)) != GBG_SUCCESS)
 		return (1);
+	printf("storing addresses:\n");
 	for (i = 0; i < ALLOC_COUNT; i++)
 		if ((p = malloc((size_t)i)) &&
 			!gbg_register_alloc(p, (size_t)i, 1, reg))
+		{
 			allocs[i] = p;
+			printf("%p,\n", p);
+		}
 	/*
-	**allocation of size 0 should not have been registered
 	**reference count modifications greater than the stored count should be okay
 	**	which is why we use '-i' in gbg_mod_refcount call.
 	*/
