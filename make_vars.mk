@@ -22,7 +22,7 @@ INCS = $(INC_DIR)/*.h
 DEPENDENCIES = libmyrbtree libft
 
 CC := gcc
-CFLAGS_MORE =
+CFLAGS_MORE = -g
 ifndef CFLAGS
 	CFLAGS := -Wall -Wextra -Werror -I $(INC_DIR) -I $(LIBS_I)
 endif

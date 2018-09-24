@@ -85,8 +85,8 @@ $(LIBS_L)/$(LIBNAME).a
 		-I $(LIBS_I) -I $(SRC_DIR) -I $(INC_DIR)\
 		$<\
 		-L $(LIBS_L)\
-		-laux\
 		-l$(NAME)\
+		$(LIB_DIR)/libmyrbtree/libmyrbtree.a\
 		-lft\
 		-o $@\
 

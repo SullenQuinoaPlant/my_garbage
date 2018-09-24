@@ -12,7 +12,7 @@ int						gbg_mod_refcount(
 	r = rbtn_retrieve(&addr, p_registry, (void**)&entry);
 	if (r == RBT_KEY_NOT_FOUND)
 		return (GBG_NOT_REG);
-	else if ((r =! RBT_SUCCESS))
+	else if ((r != RBT_SUCCESS))
 		return (GBG_SYS_ERR);
 	else if (inc > 0 && INT_MAX - inc < entry->refct)
 		return (GBG_REFCT_TOO_BIG);
