@@ -10,7 +10,8 @@ EXECUTION_STAMPS := $(TEST_OBJS:.o=.execution.stamp)
 CFLAGS_TEST = -fno-builtin -g
 CFLAGS_TEST += $(CFLAGS_MORE)
 
-TEST_DEPENDENCIES = libcmocka_shared
+CMOCKA_LIBNAME = libcmocka
+TEST_DEPENDENCIES = $(CMOCKA_LIBNAME)
 
 
 .PHONY : tests_all
@@ -27,8 +28,8 @@ run_tests
 .PHONY : build_test_dependencies
 build_test_dependencies : $(TEST_DEPENDENCIES)
 
-.PHONY : libcmocka_shared
-libcmocka_shared :
+.PHONY : $(CMOCKA_LIBNAME)
+$(CMOCKA_LIBNAME) :
 	$(MAKE) -C $(TEST_DIR)/cmocka
 
 .PHONY : build_tests
@@ -49,7 +50,8 @@ cmocka :
 	@if $(CC) $(CFLAGS_TEST)\
 		-I $(LIBS_I) -L $(LIBS_L)\
 	 	$(TEST_DIR)/cmocka/check_install.c\
-		-lcmocka -o test.o\
+		$(patsubst lib%,-l%,$(CMOCKA_LIBNAME))\
+		-o test.o\
 		-Wl,-rpath=$(LIBS_L)\
 		&& ./test.o .;\
 	then\
@@ -86,7 +88,7 @@ $(LIBS_L)/$(LIBNAME).a
 		$<\
 		-L $(LIBS_L)\
 		-l$(NAME)\
-		$(LIB_DIR)/libmyrbtree/libmyrbtree.a\
+		$(patsubst lib%,-l%,$(DEPENDENCIES))\
 		-lft\
 		-o $@\
 

@@ -16,7 +16,7 @@ build :
 install :
 	cp $(SOURCE_DIR)/include/cmocka.h $(LIBS_I)/
 	cp $(BUILD_DIR)/src/libcmocka* $(LIBS_L)/
-	touch $(LIB_DIR)/libcmocka_shared
+	touch $(LIB_DIR)/$(CMOCKA_LIBNAME)
 
 $(BUILD_DIR) :
 	if ! [ -d $(BUILD_DIR) ];\
