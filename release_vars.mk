@@ -1,5 +1,5 @@
 
-NAME = myrbtree
+NAME = mygarbage
 LIBNAME = lib$(NAME)
 
 ROOT = .
