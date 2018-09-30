@@ -34,9 +34,12 @@ int				gbg_init(
 void			gbg_delete(
 	void	**p_registry);
 
+void			gbg_dirtydelete(
+	void	**p_registry);
+
 /*
-**can fail if (size_t) may be too small to store size of
-**several memory allocations.
+**Can fail if (size_t) may be too small to store size of
+**several memory allocations:
 */
 int				gbg_mem_use(
 	void	*p_registry,

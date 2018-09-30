@@ -16,5 +16,6 @@ int						gbg_unreg(
 		return (GBG_SYS_ERR);
 	*ret_sz = entry->sz;
 	*ret_refct = entry->refct;
+	ft_cleanfree(entry, sizeof(t_s_entry));
 	return (GBG_SUCCESS);
 }
