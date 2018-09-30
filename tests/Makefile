@@ -30,7 +30,7 @@ build_test_dependencies : $(TEST_DEPENDENCIES)
 
 .PHONY : $(CMOCKA_LIBNAME)
 $(CMOCKA_LIBNAME) :
-	$(MAKE) -C $(TEST_DIR)/cmocka
+	$(MAKE) -C $(TEST_DIR)/cmocka CMOCKA_LIBNAME=$(CMOCKA_LIBNAME)
 
 .PHONY : build_tests
 build_tests\
